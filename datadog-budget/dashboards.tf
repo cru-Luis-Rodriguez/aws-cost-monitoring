@@ -6,7 +6,7 @@ resource "datadog_dashboard" "aws_cost_dashboard" {
 
   template_variable {
     name    = "account_id"
-    defaults = var.aws_account_id
+    defaults = ["var.aws_account_id"]
     prefix  = "account_id"
   }
 
