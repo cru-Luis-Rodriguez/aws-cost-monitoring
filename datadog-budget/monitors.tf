@@ -28,7 +28,7 @@ resource "datadog_monitor" "aws_service_anomaly" {
     recovery_window = "last_1h"
     trigger_window  = "last_1d"
   }
-  monitor_threshold {
+  monitor_thresholds {
     critical          = "1.0"
     critical_recovery = "0.0"
     warning           = "0.5"
@@ -54,7 +54,7 @@ resource "datadog_monitor" "aws_service_minimal_cost" {
   renotify_interval   = 0
   require_full_window = false
   tags                = var.monitor_tags
-  monitor_threshold {
+  monitor_thresholds {
     critical = var.minimal_alerting_value
   }
   timeout_h = 0
